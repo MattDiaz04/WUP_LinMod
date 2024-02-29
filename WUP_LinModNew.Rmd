@@ -56,6 +56,11 @@ There is a positive relationship between SIMS and ARM. If this were a perfect li
 
 ### Numerical results
 
+```{r}
+cor(SIMS~ARM,data=data)
+```
+
+This is the degree of correlation between arm strength and sims score. A strong correlation is 1 and a weak correlation would be 0. 
 
 ### Inferential  (Build model.1)
 
