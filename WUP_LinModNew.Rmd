@@ -48,6 +48,12 @@ so we use thre numercial~numerical helper file
 ## Results
 ### scatterplot
 
+```{r}
+plot(SIMS~ARM,data=data)
+```
+
+There is a positive relationship between SIMS and ARM. If this were a perfect linear relationship then all of these plots would be in a straight line. The correlation may be around 0.8.  
+
 ### Numerical results
 
 
