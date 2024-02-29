@@ -40,7 +40,7 @@ We will produce three equation models to get
 For each model we will predict sim for arm = 88, grip = 94 
 
 # Methods: 
-we have numerical respinses (sim score) and numerical explanatory variables (arm and grip strength)
+We have numerical respinses (sim score) and numerical explanatory variables (arm and grip strength)
 so we use thre numercial~numerical helper file
 
 ## Model 1 SIM~ARMS
