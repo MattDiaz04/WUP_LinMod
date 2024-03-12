@@ -93,14 +93,37 @@ This is a scatter plot with a function on it. At ARM strength 88 the 95 percent 
 
 ### Now add in scatterplot
 
+```{r}
+plot(SIMS~GRIP,data=data)
+```
+
+There is a positive relationship between SIMS and ARM. If this were a perfect linear relationship then all of these plots would be in a straight line
 
 ### Numerical results 
+
+```{r}
+cor(SIMS~GRIP,data=data)
+```
+
+This is the degree of correlation between sims score and grip. A strong correlation is 1 and a weak correlation would be 0. 
 
 
 ### Inferential  (Build model.2)
   
+```{r}
+model.2 <- lm(SIMS~GRIP,data=data)
+summary.lm(model.2)
+```  
+
+The p-value for the coefficient of arm is smaller than .05. This means that the coefficient is highly significant.  
+
 
 #### predict model.2 at target point
+
+```{r}
+SIMSpredict= predict.lm(model.2, newdata= data.frame(ARM=88,GRIP=94), interval = "confidence") 
+print(SIMSpredict)
+```
 
 #### now add the model fit to our plot for model.2
   
@@ -145,7 +168,21 @@ The 95% confidence interval is SIMS is between -2.13 and 2.43 since this interva
 ## Comparing nested models ANOVA Test
 
 ### Model.1 vs Model.3
+
+```{r}
+anova(model.1,model.3)
+```
+
+p-value is 0.00000499, this is less than 0.05 so we conclude that model.3 better than model.1. 
+
 ### Model.2 vs Model.3
+
+```{r}
+anova(model.2,model.3)
+```
+
+The p-value is 0.00000000149, this is less than 0.05 so we conclude that model 2 is better than model 3. 
 
 ## Informally compare Model.1 with model.2
 
+Since model 3 is better than model 1 and model 2 is better than model 3, we can conclude that model 2 is better than model 1. 
